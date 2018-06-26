@@ -17,7 +17,7 @@ namespace Rezeptewoche
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            // what to do
+            // what to do now
         }
     }
 }
