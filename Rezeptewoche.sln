@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rezeptewoche", "Rezeptewoche\Rezeptewoche.csproj", "{47CF10B9-B79B-46A3-8629-B2713689977F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AC62CBE-0B36-49BB-BBF1-628D80F372B8}"
+	ProjectSection(SolutionItems) = preProject
+		Rezeptewoche\Rezepte.xml = Rezeptewoche\Rezepte.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {302C338C-8E52-4A84-AC69-5B782ADE87B0}
 	EndGlobalSection
 EndGlobal

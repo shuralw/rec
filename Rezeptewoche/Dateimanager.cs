@@ -104,7 +104,7 @@ namespace Rezeptewoche
         {
             Dictionary<string, Rezept> result = new Dictionary<string, Rezept>();
             XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(@".\Rezepte.xml");
+            xmlDocument.Load(@"..\..\Rezepte.xml");
             foreach (XmlNode RezepteNode in xmlDocument.SelectNodes("Rezepte"))
             {
                 foreach (XmlNode Rezept in RezepteNode.ChildNodes) // SubRezeptNode: Erster Node ist die Bezeichnung, alle weiteren sind Zutaten
