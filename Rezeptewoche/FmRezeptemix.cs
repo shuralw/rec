@@ -90,5 +90,10 @@ namespace Rezeptewoche
         {
             Application.Exit();
         }
+
+        private void btWocheGenerieren_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

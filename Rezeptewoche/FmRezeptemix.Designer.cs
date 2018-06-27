@@ -59,6 +59,7 @@
             this.btWocheGenerieren.TabIndex = 1;
             this.btWocheGenerieren.Text = "Woche generieren";
             this.btWocheGenerieren.UseVisualStyleBackColor = true;
+            this.btWocheGenerieren.Click += new System.EventHandler(this.btWocheGenerieren_Click);
             // 
             // lbDienstag
             // 
