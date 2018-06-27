@@ -12,12 +12,11 @@ using System.Xml;
 
 namespace Rezeptewoche
 {
-    public partial class Form1 : Form
+    public partial class FmMain : Form
     {
 
-        Dictionary<string, Rezept> Rezepte ;
         Dictionary<string, Zutat> Einkaufszettel = new Dictionary<string, Zutat>();
-        public Form1()
+        public FmMain()
         {
             InitializeComponent();            
             lvZutatenDesRezepts.View = View.Details;
@@ -29,7 +28,7 @@ namespace Rezeptewoche
 
         void Init()
         {
-            Rezepte = new Dictionary<string, Rezept>();
+            Variables.Rezepte  = new Dictionary<string, Rezept>();
             Einkaufszettel = new Dictionary<string, Zutat>();
         }
         private void btRecipeSubmission_Click(object sender, EventArgs e)
@@ -70,16 +69,16 @@ namespace Rezeptewoche
 
         void RezeptHinzufügen(string rezeptname)
         {
-            if (!Rezepte.ContainsKey(rezeptname))
+            if (!Variables.Rezepte .ContainsKey(rezeptname))
             {
-                Rezepte.Add(rezeptname, new Rezept(rezeptname));
+                Variables.Rezepte .Add(rezeptname, new Rezept(rezeptname));
             }
         }
         void ZutatDerRezeptListeHinzufügen(Zutat neueZutat)
         {
             string rezeptname = cbRecipename.Text;
             RezeptHinzufügen(rezeptname);
-            Rezepte[rezeptname].ZutatHinzufuegen(neueZutat);
+            Variables.Rezepte [rezeptname].ZutatHinzufuegen(neueZutat);
         }
 
         void ZutatenVomRezeptInEinkaufslisteHinzufügen(Rezept rezept)
@@ -126,14 +125,14 @@ namespace Rezeptewoche
 
         private void RezeptZumEinkaufszettelHinzufügen(object sender, EventArgs e)
         {
-            ZutatenVomRezeptInEinkaufslisteHinzufügen(Rezepte[cbRecipename.Text]);
+            ZutatenVomRezeptInEinkaufslisteHinzufügen(Variables.Rezepte [cbRecipename.Text]);
             SchreibeAlleZutatenInEinkaufszettelBox();
         }
 
         private void btLaden_Click(object sender, EventArgs e)
         {
             Dateimanager dmg = new Dateimanager();
-            this.Rezepte = dmg.LoadXML(Rezepte);
+            this.Variables.Rezepte  = dmg.LoadXML(Variables.Rezepte );
             cbRecipename.Items.Clear();
             cbRecipenameAktualisieren();
         }
@@ -141,7 +140,7 @@ namespace Rezeptewoche
         private void cbRecipenameAktualisieren()
         {
             cbRecipename.Items.Clear();
-            foreach (string rezept in Rezepte.Keys)
+            foreach (string rezept in Variables.Rezepte .Keys)
             {
                 cbRecipename.Items.Add(rezept);
             }
@@ -152,9 +151,9 @@ namespace Rezeptewoche
             if (cbRecipename.Items.Count > 0)
             {
                 lvZutatenDesRezepts.Items.Clear();
-                if (Rezepte.ContainsKey(cbRecipename.Text))
+                if (Variables.Rezepte .ContainsKey(cbRecipename.Text))
                 {
-                    foreach (Zutat zutat in Rezepte[cbRecipename.Text].Zutaten)
+                    foreach (Zutat zutat in Variables.Rezepte [cbRecipename.Text].Zutaten)
                     {
                         AddZutatToListView(zutat);
                     }
@@ -165,7 +164,14 @@ namespace Rezeptewoche
         private void btspeichern_Click(object sender, EventArgs e)
         {
             Dateimanager dmg = new Dateimanager();
-            dmg.writeXMl(Rezepte);
+            dmg.writeXMl(Variables.Rezepte );
+        }
+
+        private void btZeigeRezeptemix_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form fm2 = new FmRezeptemix();
+            fm2.Show();
         }
     }
 }

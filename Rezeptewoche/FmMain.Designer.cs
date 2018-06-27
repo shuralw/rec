@@ -1,6 +1,6 @@
 ﻿namespace Rezeptewoche
 {
-    partial class Form1
+    partial class FmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btLaden = new System.Windows.Forms.Button();
             this.btspeichern = new System.Windows.Forms.Button();
+            this.btZeigeRezeptemix = new System.Windows.Forms.Button();
             this.gbAddRecipe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -238,6 +239,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btZeigeRezeptemix);
             this.groupBox1.Controls.Add(this.btLaden);
             this.groupBox1.Controls.Add(this.btspeichern);
             this.groupBox1.Location = new System.Drawing.Point(12, 451);
@@ -250,7 +252,7 @@
             // btLaden
             // 
             this.btLaden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btLaden.Location = new System.Drawing.Point(470, 27);
+            this.btLaden.Location = new System.Drawing.Point(290, 27);
             this.btLaden.Name = "btLaden";
             this.btLaden.Size = new System.Drawing.Size(260, 23);
             this.btLaden.TabIndex = 6;
@@ -261,13 +263,24 @@
             // btspeichern
             // 
             this.btspeichern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btspeichern.Location = new System.Drawing.Point(63, 27);
+            this.btspeichern.Location = new System.Drawing.Point(9, 27);
             this.btspeichern.Name = "btspeichern";
             this.btspeichern.Size = new System.Drawing.Size(272, 23);
             this.btspeichern.TabIndex = 5;
             this.btspeichern.Text = "Speichern";
             this.btspeichern.UseVisualStyleBackColor = true;
             this.btspeichern.Click += new System.EventHandler(this.btspeichern_Click);
+            // 
+            // btZeigeRezeptemix
+            // 
+            this.btZeigeRezeptemix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btZeigeRezeptemix.Location = new System.Drawing.Point(559, 27);
+            this.btZeigeRezeptemix.Name = "btZeigeRezeptemix";
+            this.btZeigeRezeptemix.Size = new System.Drawing.Size(260, 23);
+            this.btZeigeRezeptemix.TabIndex = 7;
+            this.btZeigeRezeptemix.Text = "Rezeptemix anzeigen";
+            this.btZeigeRezeptemix.UseVisualStyleBackColor = true;
+            this.btZeigeRezeptemix.Click += new System.EventHandler(this.btZeigeRezeptemix_Click);
             // 
             // Form1
             // 
@@ -310,6 +323,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btLaden;
         private System.Windows.Forms.Button btspeichern;
+        private System.Windows.Forms.Button btZeigeRezeptemix;
     }
 }
 
