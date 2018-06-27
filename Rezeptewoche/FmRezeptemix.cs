@@ -16,15 +16,48 @@ namespace Rezeptewoche
         public FmRezeptemix()
         {
             InitializeComponent();
-            initDicLabels();
-            setDicLabels();
+            Generate();
+            //initDicLabels();
+            //setDicLabels();
         }
         
         public void Generate()
         {
             Random random = new Random();
             int AnzahlRezepte = Variables.Rezepte.Count;
+            List<string> usedBezeichnungen = new List<string>();
 
+            var labels = gbMix.Controls.OfType<Label>();
+
+            if (Variables.Rezepte.Count>7)
+            {
+                foreach (Label lb in labels)
+                {
+                    string neuesRezept;
+                    do
+                    {
+                        neuesRezept = getRezepte()[random.Next(0, AnzahlRezepte)].Bezeichnung;
+                    }
+                    while (usedBezeichnungen.Contains(neuesRezept));
+
+                    lb.Text = neuesRezept;
+                    usedBezeichnungen.Add(neuesRezept);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zu wenige Rezepte für\neine ganze Woche vorhanden..");
+            }
+        }
+
+        public List<Rezept> getRezepte()
+        {
+            List<Rezept> tempList = new List<Rezept>();
+            foreach (Rezept rezept in Variables.Rezepte.Values)
+            {
+                tempList.Add(rezept);
+            }
+            return tempList;
         }
 
         public Dictionary<string,string> initDicLabels()
@@ -46,6 +79,16 @@ namespace Rezeptewoche
                 gbMix.Controls.Find(key, false).FirstOrDefault().Text = dicLabels[key];
             }
         }
-        
+
+        private void btZurueck_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void FmRezeptemix_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

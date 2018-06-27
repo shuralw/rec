@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Rezeptewoche
 {
-    enum Maßeinheitstyp { mg ,g,kg,ml,l,TL,EL,Prise,Tropfen, Stk}
+    public enum Maßeinheitstyp { mg ,g,kg,ml,l,TL,EL,Prise,Tropfen, Stk}
     [SerializableAttribute]
     [ComVisibleAttribute(true)]
-    class Zutat
+    public class Zutat
     {
         public string Bezeichnung { get; set; }
         public int Menge { get; set; }

@@ -132,7 +132,7 @@ namespace Rezeptewoche
         private void btLaden_Click(object sender, EventArgs e)
         {
             Dateimanager dmg = new Dateimanager();
-            this.Variables.Rezepte  = dmg.LoadXML(Variables.Rezepte );
+            Variables.Rezepte  = dmg.LoadXML(Variables.Rezepte );
             cbRecipename.Items.Clear();
             cbRecipenameAktualisieren();
         }
@@ -171,7 +171,8 @@ namespace Rezeptewoche
         {
             this.Hide();
             Form fm2 = new FmRezeptemix();
-            fm2.Show();
+            fm2.ShowDialog();
+            this.Show();
         }
     }
 }

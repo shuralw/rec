@@ -32,23 +32,24 @@
             this.btWocheGenerieren = new System.Windows.Forms.Button();
             this.lbDienstag = new System.Windows.Forms.Label();
             this.gbMix = new System.Windows.Forms.GroupBox();
-            this.lbMontag = new System.Windows.Forms.Label();
-            this.lbMittwoch = new System.Windows.Forms.Label();
-            this.lbDonnerstag = new System.Windows.Forms.Label();
-            this.lbFreitag = new System.Windows.Forms.Label();
-            this.lbSamstag = new System.Windows.Forms.Label();
             this.lbSonntag = new System.Windows.Forms.Label();
+            this.lbSamstag = new System.Windows.Forms.Label();
+            this.lbFreitag = new System.Windows.Forms.Label();
+            this.lbDonnerstag = new System.Windows.Forms.Label();
+            this.lbMittwoch = new System.Windows.Forms.Label();
+            this.lbMontag = new System.Windows.Forms.Label();
             this.gbMix.SuspendLayout();
             this.SuspendLayout();
             // 
             // btZurueck
             // 
-            this.btZurueck.Location = new System.Drawing.Point(176, 372);
+            this.btZurueck.Location = new System.Drawing.Point(89, 370);
             this.btZurueck.Name = "btZurueck";
             this.btZurueck.Size = new System.Drawing.Size(75, 23);
             this.btZurueck.TabIndex = 0;
             this.btZurueck.Text = "Zurück";
             this.btZurueck.UseVisualStyleBackColor = true;
+            this.btZurueck.Click += new System.EventHandler(this.btZurueck_Click);
             // 
             // btWocheGenerieren
             // 
@@ -84,41 +85,14 @@
             this.gbMix.TabStop = false;
             this.gbMix.Text = "Rezepte der Woche";
             // 
-            // lbMontag
+            // lbSonntag
             // 
-            this.lbMontag.AutoSize = true;
-            this.lbMontag.Location = new System.Drawing.Point(13, 25);
-            this.lbMontag.Name = "lbMontag";
-            this.lbMontag.Size = new System.Drawing.Size(35, 13);
-            this.lbMontag.TabIndex = 3;
-            this.lbMontag.Text = "label1";
-            // 
-            // lbMittwoch
-            // 
-            this.lbMittwoch.AutoSize = true;
-            this.lbMittwoch.Location = new System.Drawing.Point(13, 69);
-            this.lbMittwoch.Name = "lbMittwoch";
-            this.lbMittwoch.Size = new System.Drawing.Size(35, 13);
-            this.lbMittwoch.TabIndex = 4;
-            this.lbMittwoch.Text = "label3";
-            // 
-            // lbDonnerstag
-            // 
-            this.lbDonnerstag.AutoSize = true;
-            this.lbDonnerstag.Location = new System.Drawing.Point(13, 92);
-            this.lbDonnerstag.Name = "lbDonnerstag";
-            this.lbDonnerstag.Size = new System.Drawing.Size(35, 13);
-            this.lbDonnerstag.TabIndex = 5;
-            this.lbDonnerstag.Text = "label4";
-            // 
-            // lbFreitag
-            // 
-            this.lbFreitag.AutoSize = true;
-            this.lbFreitag.Location = new System.Drawing.Point(13, 114);
-            this.lbFreitag.Name = "lbFreitag";
-            this.lbFreitag.Size = new System.Drawing.Size(35, 13);
-            this.lbFreitag.TabIndex = 6;
-            this.lbFreitag.Text = "label5";
+            this.lbSonntag.AutoSize = true;
+            this.lbSonntag.Location = new System.Drawing.Point(13, 158);
+            this.lbSonntag.Name = "lbSonntag";
+            this.lbSonntag.Size = new System.Drawing.Size(35, 13);
+            this.lbSonntag.TabIndex = 8;
+            this.lbSonntag.Text = "label2";
             // 
             // lbSamstag
             // 
@@ -129,14 +103,41 @@
             this.lbSamstag.TabIndex = 7;
             this.lbSamstag.Text = "label1";
             // 
-            // lbSonntag
+            // lbFreitag
             // 
-            this.lbSonntag.AutoSize = true;
-            this.lbSonntag.Location = new System.Drawing.Point(13, 158);
-            this.lbSonntag.Name = "lbSonntag";
-            this.lbSonntag.Size = new System.Drawing.Size(35, 13);
-            this.lbSonntag.TabIndex = 8;
-            this.lbSonntag.Text = "label2";
+            this.lbFreitag.AutoSize = true;
+            this.lbFreitag.Location = new System.Drawing.Point(13, 114);
+            this.lbFreitag.Name = "lbFreitag";
+            this.lbFreitag.Size = new System.Drawing.Size(35, 13);
+            this.lbFreitag.TabIndex = 6;
+            this.lbFreitag.Text = "label5";
+            // 
+            // lbDonnerstag
+            // 
+            this.lbDonnerstag.AutoSize = true;
+            this.lbDonnerstag.Location = new System.Drawing.Point(13, 92);
+            this.lbDonnerstag.Name = "lbDonnerstag";
+            this.lbDonnerstag.Size = new System.Drawing.Size(35, 13);
+            this.lbDonnerstag.TabIndex = 5;
+            this.lbDonnerstag.Text = "label4";
+            // 
+            // lbMittwoch
+            // 
+            this.lbMittwoch.AutoSize = true;
+            this.lbMittwoch.Location = new System.Drawing.Point(13, 69);
+            this.lbMittwoch.Name = "lbMittwoch";
+            this.lbMittwoch.Size = new System.Drawing.Size(35, 13);
+            this.lbMittwoch.TabIndex = 4;
+            this.lbMittwoch.Text = "label3";
+            // 
+            // lbMontag
+            // 
+            this.lbMontag.AutoSize = true;
+            this.lbMontag.Location = new System.Drawing.Point(13, 25);
+            this.lbMontag.Name = "lbMontag";
+            this.lbMontag.Size = new System.Drawing.Size(35, 13);
+            this.lbMontag.TabIndex = 3;
+            this.lbMontag.Text = "label1";
             // 
             // FmRezeptemix
             // 
@@ -148,6 +149,7 @@
             this.Controls.Add(this.btZurueck);
             this.Name = "FmRezeptemix";
             this.Text = "FmRezeptemix";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FmRezeptemix_FormClosed);
             this.gbMix.ResumeLayout(false);
             this.gbMix.PerformLayout();
             this.ResumeLayout(false);

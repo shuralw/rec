@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rezeptewoche
 {
-    class Rezept
+    public class Rezept
     {
         public List<Zutat> Zutaten = new List<Zutat>();
         public string Bezeichnung { get; set; }
