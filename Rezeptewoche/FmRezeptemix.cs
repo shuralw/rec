@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Rezeptewoche
 {
+    enum Wochentage { Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag}
     public partial class FmRezeptemix : Form
     {
         Dictionary<string, string> dicLabels = new Dictionary<string, string>();
@@ -31,7 +32,7 @@ namespace Rezeptewoche
 
             if (Variables.Rezepte.Count>7)
             {
-                foreach (Label lb in labels)
+                foreach (Wochentage wt in Enum.GetValues(typeof(Wochentage)))
                 {
                     string neuesRezept;
                     do
@@ -40,7 +41,7 @@ namespace Rezeptewoche
                     }
                     while (usedBezeichnungen.Contains(neuesRezept));
 
-                    lb.Text = neuesRezept;
+                    gbMix.Controls.Find("lb"+wt.ToString(),false).First().Text = neuesRezept;
                     usedBezeichnungen.Add(neuesRezept);
                 }
             }
