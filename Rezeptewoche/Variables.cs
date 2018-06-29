@@ -9,5 +9,7 @@ namespace Rezeptewoche
     class Variables
     {
         public static Dictionary<string, Rezept> Rezepte;
+
+        public static bool Saved { get; internal set; }
     }
 }

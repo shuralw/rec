@@ -37,6 +37,7 @@ namespace Rezeptewoche
             ZutatDerRezeptListeHinzufügen(NeueZutat);
             cbRecipenameAktualisieren();
             AddZutatToListView(NeueZutat);
+            Variables.Saved = false;
         }
 
         void AddZutatToListView(Zutat neueZutat)
@@ -165,6 +166,7 @@ namespace Rezeptewoche
         {
             Dateimanager dmg = new Dateimanager();
             dmg.writeXMl(Variables.Rezepte );
+            Variables.Saved = true;
         }
 
         private void btZeigeRezeptemix_Click(object sender, EventArgs e)
@@ -173,6 +175,14 @@ namespace Rezeptewoche
             Form fm2 = new FmRezeptemix();
             fm2.ShowDialog();
             this.Show();
+        }
+
+        private void OnClose(object sender, FormClosingEventArgs e)
+        {
+            if (Variables.Saved)
+            {
+
+            }
         }
     }
 }

@@ -46,9 +46,9 @@
             this.rtbSelectedRecipes = new System.Windows.Forms.RichTextBox();
             this.btMixOfWeek = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btZeigeRezeptemix = new System.Windows.Forms.Button();
             this.btLaden = new System.Windows.Forms.Button();
             this.btspeichern = new System.Windows.Forms.Button();
-            this.btZeigeRezeptemix = new System.Windows.Forms.Button();
             this.gbAddRecipe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -249,6 +249,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "3. Speichern";
             // 
+            // btZeigeRezeptemix
+            // 
+            this.btZeigeRezeptemix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btZeigeRezeptemix.Location = new System.Drawing.Point(559, 27);
+            this.btZeigeRezeptemix.Name = "btZeigeRezeptemix";
+            this.btZeigeRezeptemix.Size = new System.Drawing.Size(260, 23);
+            this.btZeigeRezeptemix.TabIndex = 7;
+            this.btZeigeRezeptemix.Text = "Rezeptemix anzeigen";
+            this.btZeigeRezeptemix.UseVisualStyleBackColor = true;
+            this.btZeigeRezeptemix.Click += new System.EventHandler(this.btZeigeRezeptemix_Click);
+            // 
             // btLaden
             // 
             this.btLaden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -271,18 +282,7 @@
             this.btspeichern.UseVisualStyleBackColor = true;
             this.btspeichern.Click += new System.EventHandler(this.btspeichern_Click);
             // 
-            // btZeigeRezeptemix
-            // 
-            this.btZeigeRezeptemix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btZeigeRezeptemix.Location = new System.Drawing.Point(559, 27);
-            this.btZeigeRezeptemix.Name = "btZeigeRezeptemix";
-            this.btZeigeRezeptemix.Size = new System.Drawing.Size(260, 23);
-            this.btZeigeRezeptemix.TabIndex = 7;
-            this.btZeigeRezeptemix.Text = "Rezeptemix anzeigen";
-            this.btZeigeRezeptemix.UseVisualStyleBackColor = true;
-            this.btZeigeRezeptemix.Click += new System.EventHandler(this.btZeigeRezeptemix_Click);
-            // 
-            // Form1
+            // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,8 +291,9 @@
             this.Controls.Add(this.btMixOfWeek);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbAddRecipe);
-            this.Name = "Form1";
+            this.Name = "FmMain";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClose);
             this.gbAddRecipe.ResumeLayout(false);
             this.gbAddRecipe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
