@@ -63,7 +63,7 @@ namespace Rezeptewoche
 
         public void writeXMl(Dictionary<string, Rezept> Rezepte)
         {
-            FileStream stream = new FileStream(@".\Rezepte.xml", FileMode.Create);
+            FileStream stream = new FileStream(@"..\..\Rezepte.xml", FileMode.Create);
             XmlWriter writer = XmlWriter.Create(stream);
             writer.WriteStartElement("Rezepte");
 

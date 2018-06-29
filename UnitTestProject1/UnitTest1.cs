@@ -8,6 +8,7 @@ namespace Rezeptewoche
     [TestClass]
     public class UnitTest1
     {
+        
         [TestMethod]
         public void TestZutat()
         {
@@ -35,7 +36,7 @@ namespace Rezeptewoche
             Rezept rezept = new Rezept("Kartoffelpürree", zutaten);
 
             // Assert
-            Assert.AreEqual(new Rezept("Kartoffelpürree", new List<Zutat> { new Zutat() }),rezept);
+            Assert.AreEqual(new Rezept("Kartoffelpürree", zutaten),rezept);
         }
     }
 }
